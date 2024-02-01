@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+development:
+  <<: *default
+  host: localhost
+  port: 5432
+  database: postgres
+  username: system
+  password: system
+test:
+  <<: *default
+  database: rails_handson_test
+production:
+  <<: *default
+  database: rails_handson_production
+  username: rails_handson
+  password: <%= ENV["RAILS_HANDSON_DATABASE_PASSWORD"] %>
