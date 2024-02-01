@@ -19,3 +19,14 @@
 * db起動 `docker compose up`
 * rails起動 `bundle exec rails s`
 * `localhost:3000` にアクセスするといい感じ
+
+# テストの用意
+* railsにはminitestが入っているが、人気ないらしい。rspecを使う。
+* Gemfileのgroup developのところに `gem "rpec-rails"`
+* `bundle exec rails generate rspec:install` でテストに必要なものを入れてくれる
+
+# モデルをつくる
+* モデルはテーブルと一致する
+* `bundle exec rails g scaffold Todo` Todoモデルと関係するありとあらゆるものを作る
+* `bundle exec rails db:migrate` DBにテーブルを作ってくれる
+* `app/controllers/todo_controller.rb` ができててやばい
